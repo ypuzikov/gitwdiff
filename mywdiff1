@@ -5,5 +5,5 @@ while getopts uL: flag; do true; done
 shift $(($OPTIND - 1))
 
 esc=$(printf '\033[')
-wdiff -n -w "${esc}97;41m" -x "${esc}m" -y "${esc}97;44m" -z "${esc}m" "$@" | fgrep -C2 "$esc"
+wdiff -n -w "${esc}97;41m" -x "${esc}m" -y "${esc}97;44m" -z "${esc}m" "$@" | fgrep -C2 --color=never "$esc"
 exec cmp -s "$@"
