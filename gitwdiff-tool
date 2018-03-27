@@ -11,10 +11,10 @@ newmode="$8"
 
 esc=$(printf '\033[')
 msg="${esc}1m*** $path${esc}m"
-if [ "$#" == "1" ]; then
+if [ "$#" = "1" ]; then
     echo "$msg: unmerged"
 else
-    if [ "$oldfile" == "/dev/null" ]; then
+    if [ "$oldfile" = "/dev/null" ]; then
         echo "$msg: new file, mode $newmode"
         echo
     else
